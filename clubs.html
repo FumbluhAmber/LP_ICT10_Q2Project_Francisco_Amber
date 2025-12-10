@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>School Club Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body class="green-theme">
+<header>
+    <h1>School Club Information</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="calculator.html">GWA Calculator</a>
+        <a href="clubs.html">Clubs</a>
+    </nav>
+</header>
+
+<section class="container">
+    <label>Select a club:</label>
+
+    <select id="club_select">
+        <option value="Cubs' Club">Cubs' Club</option>
+        <option value="Creative Minds">Creative Minds</option>
+        <option value="Theatre Arts Guild">Theatre Arts Guild</option>
+    </select>
+
+    <button py-click="show_club()">Show Club Information</button>
+    <pre id="club-info"></pre>
+</section>
+
+<py-script>
+clubs = {
+    "Cubs' Club": {
+        "Description": "Find experience in leadership and companionship.",
+        "Meeting Time": "Thursdays 3:45-5:30 PM",
+        "Location": "Gym",
+        "Advisor": "Mr. Sorsogon",
+        "Members": 31,
+        "Category": "Academic"
+    },
+    "Creative Minds": {
+        "Description": "To find meaning and to harness one's philosophical thought.",
+        "Meeting Time": "Fridays 4:00 PM",
+        "Location": "Philosophy Room",
+        "Advisor": "Mr. Multiverse",
+        "Members": 25,
+        "Category": "Academic"
+    },
+    "Theatre Arts Guild": {
+        "Description": "Catered to passionate and loud speakers.",
+        "Meeting Time": "Mondays 4:30 PM",
+        "Location": "Glory Hall",
+        "Advisor": "Ms. Cotabato",
+        "Members": 20,
+        "Category": "Arts"
+    }
+}
+
+def show_club():
+    selected = Element("club_select").value
+    info = clubs[selected]
+    formatted = "
+".join([f"{key}: {value}" for key, value in info.items()])
+    Element("club-info").write(formatted)
+</py-script>
+</body>
+</html>

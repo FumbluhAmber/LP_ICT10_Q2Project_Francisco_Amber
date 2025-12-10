@@ -1,0 +1,38 @@
+body.green-theme {
+    background-color: #eaf5e1;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+header {
+    background: #2d6a4f;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+.hero {
+    background: #52b788;
+    padding: 60px;
+    text-align: center;
+    color: white;
+}
+.container {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+}
+button {
+    background: #2d6a4f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

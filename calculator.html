@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GWA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body class="green-theme">
+<header>
+    <h1>GWA Calculator</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="calculator.html">GWA Calculator</a>
+        <a href="clubs.html">Clubs</a>
+    </nav>
+</header>
+
+<section class="container">
+    <h2>Compute Your GWA</h2>
+
+    <label>Science:<input id="science" type="number"></label>
+    <label>Math:<input id="math" type="number"></label>
+    <label>English:<input id="english" type="number"></label>
+    <label>Filipino:<input id="filipino" type="number"></label>
+    <label>ICT:<input id="ict" type="number"></label>
+    <label>PE:<input id="pe" type="number"></label>
+
+    <button py-click="calculate_gwa()">Calculate GWA</button>
+
+    <p id="gwa-result"></p>
+</section>
+
+<py-script>
+def calculate_gwa():
+    try:
+        subjects = [
+            float(Element("science").value),
+            float(Element("math").value),
+            float(Element("english").value),
+            float(Element("filipino").value),
+            float(Element("ict").value),
+            float(Element("pe").value)
+        ]
+        gwa = sum(subjects) / len(subjects)
+        Element("gwa-result").write(f"Your GWA is: {gwa:.2f}")
+    except:
+        Element("gwa-result").write("Please enter valid numbers.")
+</py-script>
+</body>
+</html>
